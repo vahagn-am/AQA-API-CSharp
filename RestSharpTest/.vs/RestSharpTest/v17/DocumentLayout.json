@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|c:\\users\\vahagn.hovhannisyan\\desktop\\rest_sharp\\restsharptest\\restsharptest\\getboardstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|solutionrelative:restsharptest\\getboardstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|c:\\users\\vahagn.hovhannisyan\\desktop\\rest_sharp\\restsharptest\\restsharptest\\getboardsvalidationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|solutionrelative:restsharptest\\getboardsvalidationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GetBoardsTest.cs",
+              "DocumentMoniker": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\GetBoardsTest.cs",
+              "RelativeDocumentMoniker": "RestSharpTest\\GetBoardsTest.cs",
+              "ToolTip": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\GetBoardsTest.cs",
+              "RelativeToolTip": "RestSharpTest\\GetBoardsTest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T14:57:06.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GetBoardsValidationTest.cs",
+              "DocumentMoniker": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\GetBoardsValidationTest.cs",
+              "RelativeDocumentMoniker": "RestSharpTest\\GetBoardsValidationTest.cs",
+              "ToolTip": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\GetBoardsValidationTest.cs",
+              "RelativeToolTip": "RestSharpTest\\GetBoardsValidationTest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T14:31:18.067Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
