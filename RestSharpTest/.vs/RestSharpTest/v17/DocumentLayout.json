@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|c:\\users\\vahagn.hovhannisyan\\desktop\\rest_sharp\\restsharptest\\restsharptest\\getboardstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|solutionrelative:restsharptest\\getboardstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|c:\\users\\vahagn.hovhannisyan\\desktop\\rest_sharp\\restsharptest\\restsharptest\\tests\\get\\getcardsvalidationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|solutionrelative:restsharptest\\tests\\get\\getcardsvalidationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|c:\\users\\vahagn.hovhannisyan\\desktop\\rest_sharp\\restsharptest\\restsharptest\\getboardsvalidationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|solutionrelative:restsharptest\\getboardsvalidationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|c:\\users\\vahagn.hovhannisyan\\desktop\\rest_sharp\\restsharptest\\restsharptest\\tests\\basetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|solutionrelative:restsharptest\\tests\\basetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|c:\\users\\vahagn.hovhannisyan\\desktop\\rest_sharp\\restsharptest\\restsharptest\\consts\\urlparamvalues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|solutionrelative:restsharptest\\consts\\urlparamvalues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|c:\\users\\vahagn.hovhannisyan\\desktop\\rest_sharp\\restsharptest\\restsharptest\\consts\\boardsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|solutionrelative:restsharptest\\consts\\boardsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|c:\\users\\vahagn.hovhannisyan\\desktop\\rest_sharp\\restsharptest\\restsharptest\\tests\\get\\getboardsvalidationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|solutionrelative:restsharptest\\tests\\get\\getboardsvalidationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|c:\\users\\vahagn.hovhannisyan\\desktop\\rest_sharp\\restsharptest\\restsharptest\\tests\\get\\getboardstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|solutionrelative:restsharptest\\tests\\get\\getboardstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|c:\\users\\vahagn.hovhannisyan\\desktop\\rest_sharp\\restsharptest\\restsharptest\\tests\\get\\getcardstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|solutionrelative:restsharptest\\tests\\get\\getcardstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|c:\\users\\vahagn.hovhannisyan\\desktop\\rest_sharp\\restsharptest\\restsharptest\\arguments\\providers\\authvalidationargumenstprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8D99E-7960-4EF9-8FED-EB6094C95C2B}|RestSharpTest\\RestSharpTest.csproj|solutionrelative:restsharptest\\arguments\\providers\\authvalidationargumenstprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +51,106 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GetBoardsTest.cs",
-              "DocumentMoniker": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\GetBoardsTest.cs",
-              "RelativeDocumentMoniker": "RestSharpTest\\GetBoardsTest.cs",
-              "ToolTip": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\GetBoardsTest.cs",
-              "RelativeToolTip": "RestSharpTest\\GetBoardsTest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAVAAAA",
+              "Title": "GetCardsValidationTest.cs",
+              "DocumentMoniker": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Tests\\Get\\GetCardsValidationTest.cs",
+              "RelativeDocumentMoniker": "RestSharpTest\\Tests\\Get\\GetCardsValidationTest.cs",
+              "ToolTip": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Tests\\Get\\GetCardsValidationTest.cs",
+              "RelativeToolTip": "RestSharpTest\\Tests\\Get\\GetCardsValidationTest.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwEAAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T14:57:06.489Z",
+              "WhenOpened": "2024-05-08T14:21:34.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetBoardsValidationTest.cs",
+              "DocumentMoniker": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Tests\\Get\\GetBoardsValidationTest.cs",
+              "RelativeDocumentMoniker": "RestSharpTest\\Tests\\Get\\GetBoardsValidationTest.cs",
+              "ToolTip": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Tests\\Get\\GetBoardsValidationTest.cs",
+              "RelativeToolTip": "RestSharpTest\\Tests\\Get\\GetBoardsValidationTest.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwCoAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T14:13:51.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UrlParamValues.cs",
+              "DocumentMoniker": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Consts\\UrlParamValues.cs",
+              "RelativeDocumentMoniker": "RestSharpTest\\Consts\\UrlParamValues.cs",
+              "ToolTip": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Consts\\UrlParamValues.cs",
+              "RelativeToolTip": "RestSharpTest\\Consts\\UrlParamValues.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T14:12:12.929Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GetBoardsValidationTest.cs",
-              "DocumentMoniker": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\GetBoardsValidationTest.cs",
-              "RelativeDocumentMoniker": "RestSharpTest\\GetBoardsValidationTest.cs",
-              "ToolTip": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\GetBoardsValidationTest.cs",
-              "RelativeToolTip": "RestSharpTest\\GetBoardsValidationTest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
+              "Title": "BaseTest.cs",
+              "DocumentMoniker": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Tests\\BaseTest.cs",
+              "RelativeDocumentMoniker": "RestSharpTest\\Tests\\BaseTest.cs",
+              "ToolTip": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Tests\\BaseTest.cs",
+              "RelativeToolTip": "RestSharpTest\\Tests\\BaseTest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T14:31:18.067Z"
+              "WhenOpened": "2024-05-08T14:11:47.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetCardsTest.cs",
+              "DocumentMoniker": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Tests\\Get\\GetCardsTest.cs",
+              "RelativeDocumentMoniker": "RestSharpTest\\Tests\\Get\\GetCardsTest.cs",
+              "ToolTip": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Tests\\Get\\GetCardsTest.cs",
+              "RelativeToolTip": "RestSharpTest\\Tests\\Get\\GetCardsTest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T14:10:35.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BoardsEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Consts\\BoardsEndpoints.cs",
+              "RelativeDocumentMoniker": "RestSharpTest\\Consts\\BoardsEndpoints.cs",
+              "ToolTip": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Consts\\BoardsEndpoints.cs",
+              "RelativeToolTip": "RestSharpTest\\Consts\\BoardsEndpoints.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T14:09:48.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetBoardsTest.cs",
+              "DocumentMoniker": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Tests\\Get\\GetBoardsTest.cs",
+              "RelativeDocumentMoniker": "RestSharpTest\\Tests\\Get\\GetBoardsTest.cs",
+              "ToolTip": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Tests\\Get\\GetBoardsTest.cs",
+              "RelativeToolTip": "RestSharpTest\\Tests\\Get\\GetBoardsTest.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T14:09:06.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthValidationArgumenstProvider.cs",
+              "DocumentMoniker": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Arguments\\Providers\\AuthValidationArgumenstProvider.cs",
+              "RelativeDocumentMoniker": "RestSharpTest\\Arguments\\Providers\\AuthValidationArgumenstProvider.cs",
+              "ToolTip": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\Arguments\\Providers\\AuthValidationArgumenstProvider.cs",
+              "RelativeToolTip": "RestSharpTest\\Arguments\\Providers\\AuthValidationArgumenstProvider.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T14:10:07.426Z",
+              "EditorCaption": ""
             }
           ]
         }

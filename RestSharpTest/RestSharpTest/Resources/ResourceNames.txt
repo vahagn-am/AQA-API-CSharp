@@ -1,0 +1,3 @@
+﻿Newtonsoft.JSON.Schema = Make a Json Parsing
+RestSharp = Handle API request
+NUnite = Hanlde Assertion and Testing (NUnit test project = When Creating new Project)
