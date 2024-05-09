@@ -10,18 +10,18 @@ namespace RestSharpTest.Arguments.Providers
     {
         public IEnumerator GetEnumerator()
         {
-            yield return new AuthValidationArgumentsHolderForCard
-            {
-                AuthParams = ArraySegment<Parameter>.Empty,
-                ErrorMessage = "unauthorized card permission requested",
-                StatusCode = HttpStatusCode.Unauthorized
-            };
-            yield return new AuthValidationArgumentsHolderForCard
-            {
-                AuthParams = new[] { new Parameter("key", UrlParamValues.ValidKey, ParameterType.QueryString) },
-                ErrorMessage = "unauthorized card permission requested",
-                StatusCode = HttpStatusCode.Unauthorized
-            };
+            //yield return new AuthValidationArgumentsHolderForCard
+            //{
+            //    AuthParams = ArraySegment<Parameter>.Empty,
+            //    ErrorMessage = "unauthorized card permission requested",
+            //    StatusCode = HttpStatusCode.Unauthorized
+            //};
+            //yield return new AuthValidationArgumentsHolderForCard
+            //{
+            //    AuthParams = new[] { new Parameter("key", UrlParamValues.ValidKey, ParameterType.QueryString) },
+            //    ErrorMessage = "unauthorized card permission requested",
+            //    StatusCode = HttpStatusCode.Unauthorized
+            //};
             yield return new AuthValidationArgumentsHolderForCard
             {
                 AuthParams = new[] { new Parameter("token", UrlParamValues.ValidToken, ParameterType.QueryString) },

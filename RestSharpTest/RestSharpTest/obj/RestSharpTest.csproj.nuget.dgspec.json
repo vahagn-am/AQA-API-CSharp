@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\RestSharpTest.csproj": {}
+    "C:\\Users\\vahov\\OneDrive\\Desktop\\C#\\AQA-API-CSharp\\RestSharpTest\\RestSharpTest\\RestSharpTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\RestSharpTest.csproj": {
+    "C:\\Users\\vahov\\OneDrive\\Desktop\\C#\\AQA-API-CSharp\\RestSharpTest\\RestSharpTest\\RestSharpTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\RestSharpTest.csproj",
+        "projectUniqueName": "C:\\Users\\vahov\\OneDrive\\Desktop\\C#\\AQA-API-CSharp\\RestSharpTest\\RestSharpTest\\RestSharpTest.csproj",
         "projectName": "RestSharpTest",
-        "projectPath": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\RestSharpTest.csproj",
-        "packagesPath": "C:\\Users\\Vahagn.hovhannisyan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vahagn.hovhannisyan\\Desktop\\Rest_Sharp\\RestSharpTest\\RestSharpTest\\obj\\",
+        "projectPath": "C:\\Users\\vahov\\OneDrive\\Desktop\\C#\\AQA-API-CSharp\\RestSharpTest\\RestSharpTest\\RestSharpTest.csproj",
+        "packagesPath": "C:\\Users\\vahov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vahov\\OneDrive\\Desktop\\C#\\AQA-API-CSharp\\RestSharpTest\\RestSharpTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vahagn.hovhannisyan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vahov\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -52,7 +52,7 @@
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.8.0, )"
+              "version": "[17.9.0, )"
             },
             "NUnit": {
               "target": "Package",

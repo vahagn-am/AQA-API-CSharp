@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RestSharpTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1c4de5109fefbc138a73bcff6049a7659f14665")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a4dee516cbfe5e593085033161abeb0953e7d17")]
 [assembly: System.Reflection.AssemblyProductAttribute("RestSharpTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RestSharpTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
