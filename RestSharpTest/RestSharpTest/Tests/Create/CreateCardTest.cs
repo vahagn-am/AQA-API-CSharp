@@ -41,7 +41,7 @@ namespace RestSharpTest.Tests.Create
         public void DeleteCreatedCard()
         {
             var request = RequestWithAuth(CardEndpoints.DeleteCardUrl)
-                .AddUrlSegment("card_id", _CreatedCardId);
+                .AddUrlSegment("id", _CreatedCardId);
             var response = _client.Delete(request);
 
             Assert.That(HttpStatusCode.OK, Is.EqualTo(response.StatusCode));

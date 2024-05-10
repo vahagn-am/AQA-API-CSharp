@@ -6,6 +6,8 @@
         public const string GetSingleCardUrl = "/1/cards/{id}";
 
         public const string CreateCardUrl = "1/cards";
-        public const string DeleteCardUrl = "1/cards/{card_id}";
+        public const string DeleteCardUrl = "1/cards/{id}";
+
+        public const string UpdateCardUrl = "1/cards/{id}";
     }
 }

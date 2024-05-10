@@ -40,9 +40,6 @@ namespace RestSharpTest.Tests.Create
 
         }
 
-
-
-
         [Test]
         public void CheckCreateCardWithAnotherUserCredentials()
         {

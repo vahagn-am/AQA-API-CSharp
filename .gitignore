@@ -1,1 +1,5 @@
 *.vsidx
+RestSharpTest/RestSharpTest/obj/*
+RestSharpTest/RestSharpTest/bin/*
+RestSharpTest/RestSharpTest/debug/*
+RestSharpTest/.vs/*
