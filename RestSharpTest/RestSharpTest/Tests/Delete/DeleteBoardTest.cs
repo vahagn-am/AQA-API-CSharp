@@ -10,26 +10,26 @@ namespace RestSharpTest.Tests.Delete
         private string _createdBoardId;
 
         [SetUp]
-        public void CreateBoard()
+        public async Task CreateBoard()
         {
-            var request = RequestWithAuth(BoardsEndpoints.CreateBoardUrl)
+            var request = RequestWithAuth(BoardsEndpoints.CreateBoardUrl, Method.Post)
                 .AddJsonBody(new Dictionary<string, string> { { "name", "New_Board_Name" } });
-            var response = _client.Post(request);
+            var response = await _client.ExecuteAsync(request);
             _createdBoardId = JToken.Parse(response.Content).SelectToken("id").ToString();
         }
         [Test]
-        public void CheckDeleteBoard()
+        public async Task CheckDeleteBoard()
         {
-            var request = RequestWithAuth(BoardsEndpoints.DeleteBoradUrl)
+            var request = RequestWithAuth(BoardsEndpoints.DeleteBoradUrl, Method.Delete)
                 .AddUrlSegment("id", _createdBoardId);
-            var response = _client.Delete(request);
+            var response = await _client.ExecuteAsync(request);
             Assert.That(HttpStatusCode.OK, Is.EqualTo(response.StatusCode));
             Assert.That(string.Empty, Is.EqualTo(JToken.Parse(response.Content).SelectToken("_value").ToString()));
 
-            request = RequestWithAuth(BoardsEndpoints.GetAllBoardsUrl)
+            request = RequestWithAuth(BoardsEndpoints.GetAllBoardsUrl, Method.Get)
                 .AddUrlSegment("member", UrlParamValues.UserName);
 
-            response = _client.Get(request);
+            response = await _client.ExecuteAsync(request);
             var responseContent = JToken.Parse(response.Content);
 
             Assert.False(responseContent.Children().Select(token =>

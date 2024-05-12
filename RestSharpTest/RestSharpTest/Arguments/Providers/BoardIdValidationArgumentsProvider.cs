@@ -15,7 +15,7 @@ namespace RestSharpTest.Arguments.Providers
                 {
                     ErrorMessage = "invalid id",
                     StatusCode = HttpStatusCode.BadRequest,
-                    PathParams = new [] {new Parameter("id", "invalid", ParameterType.UrlSegment)}
+                    PathParams = new [] { Parameter.CreateParameter("id", "invalid", ParameterType.UrlSegment)}
                 }
             };
 
@@ -25,7 +25,7 @@ namespace RestSharpTest.Arguments.Providers
                 {
                     ErrorMessage = "The requested resource was not found.",
                     StatusCode = HttpStatusCode.NotFound,
-                    PathParams = new [] {new Parameter("id", "6639225e817a9e31b1a3f611", ParameterType.UrlSegment)}
+                    PathParams = new [] {Parameter.CreateParameter("id", "6639225e817a9e31b1a3f611", ParameterType.UrlSegment) }
                 }
             };
         }

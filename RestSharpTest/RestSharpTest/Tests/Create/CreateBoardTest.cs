@@ -2,6 +2,8 @@
 using RestSharp;
 using RestSharpTest.Consts;
 using System.Net;
+using System.Threading.Tasks;
+
 
 namespace RestSharpTest.Tests.Create
 {
@@ -10,13 +12,13 @@ namespace RestSharpTest.Tests.Create
         private string _createBoardId;
 
         [Test]
-        public void CheckCreateBoard()
+        public async Task CheckCreateBoard()
         {
             var BoardName = "New Board" + DateTime.Now.ToLongDateString();
 
-            var request = RequestWithAuth(BoardsEndpoints.CreateBoardUrl)
+            var request = RequestWithAuth(BoardsEndpoints.CreateBoardUrl, Method.Post)
                 .AddJsonBody(new Dictionary<string, string> { { "name",  BoardName } });
-            var response = _client.Post(request);
+            var response = await _client.ExecuteAsync(request);
 
             var responseContent = JToken.Parse(response.Content);
             _createBoardId = responseContent.SelectToken("id").ToString();
@@ -26,11 +28,11 @@ namespace RestSharpTest.Tests.Create
 
 
             // Creting Get Request and checking if new Board exists
-            request = RequestWithAuth(BoardsEndpoints.GetAllBoardsUrl)
+            request = RequestWithAuth(BoardsEndpoints.GetAllBoardsUrl, Method.Get)
                 .AddQueryParameter("field", "id, name")
                 .AddUrlSegment("member", UrlParamValues.UserName);
 
-            response = _client.Get(request);
+            response = await _client.ExecuteAsync(request);
             responseContent = JToken.Parse(response.Content);
 
             Assert.That(responseContent.Children().Select(token =>
@@ -38,11 +40,11 @@ namespace RestSharpTest.Tests.Create
         }
 
         [TearDown]
-        public void DeleteCreatedBoard()
+        public async Task DeleteCreatedBoard()
         {
-            var request = RequestWithAuth(BoardsEndpoints.DeleteBoradUrl)
+            var request = RequestWithAuth(BoardsEndpoints.DeleteBoradUrl, Method.Delete)
                 .AddUrlSegment("id", _createBoardId);
-            var response = _client.Delete(request);
+            var response = await _client.ExecuteAsync(request);
             Assert.That(HttpStatusCode.OK,Is.EqualTo( response.StatusCode));
         }
     }

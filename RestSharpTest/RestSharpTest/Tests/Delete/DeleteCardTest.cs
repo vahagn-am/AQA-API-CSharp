@@ -10,24 +10,24 @@ namespace RestSharpTest.Tests.Delete
         private string _createdCardId;
 
         [SetUp]
-        public void CreateNewCard()
+        public async Task CreateNewCard()
         {
-            var request = RequestWithAuth(CardEndpoints.CreateCardUrl)
+            var request = RequestWithAuth(CardEndpoints.CreateCardUrl, Method.Post)
                 .AddJsonBody(new Dictionary<string, string> {
                     { "idList", UrlParamValues.ExistingListId },
                     { "name", "Any Card Name" }
                 });
-            var response = _client.Post(request);
+            var response = await _client.ExecuteAsync(request);
             _createdCardId = JToken.Parse(response.Content).SelectToken("id").ToString();
 
         }
 
         [Test]
-        public void CheckDeleteCard()
+        public async Task CheckDeleteCard()
         {
-            var request = RequestWithAuth(CardEndpoints.DeleteCardUrl)
+            var request = RequestWithAuth(CardEndpoints.DeleteCardUrl, Method.Delete)
                 .AddUrlSegment("id", _createdCardId);
-            var response = _client.Delete(request);
+            var response = await _client.ExecuteAsync(request);
             
             Assert.That(HttpStatusCode.OK, Is.EqualTo(response.StatusCode));
             JToken parsedToken = null;
@@ -37,10 +37,10 @@ namespace RestSharpTest.Tests.Delete
 
 
 
-            request = RequestWithAuth(CardEndpoints.GetAllCardsURL)
+            request = RequestWithAuth(CardEndpoints.GetAllCardsURL, Method.Get)
                 .AddUrlSegment("list_id", UrlParamValues.ExistingListId);
 
-            response = _client.Get(request);
+            response = await _client.ExecuteAsync(request);
             var responseContent = JToken.Parse(response.Content);
 
             Assert.False(responseContent.Children().Select(token =>

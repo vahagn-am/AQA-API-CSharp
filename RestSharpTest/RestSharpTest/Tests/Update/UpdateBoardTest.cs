@@ -8,20 +8,21 @@ namespace RestSharpTest.Tests.Update
     public class UpdateBoardTest : BaseTest
     {
         [Test]
-        public void CheckUpdateBoard()
+        public async Task CheckUpdateBoard()
         {
             var updatedName = "Updated name" + DateTime.Now.ToShortDateString();
-            var request = RequestWithAuth(BoardsEndpoints.UpdateBoardUrl)
+            var request = RequestWithAuth(BoardsEndpoints.UpdateBoardUrl, Method.Put)
                 .AddUrlSegment("id", UrlParamValues.BoardIdToUpdate)
                 .AddJsonBody(new Dictionary<string, string> { { "name", updatedName} });
-            var response = _client.Put(request);
+            var response = await _client.ExecuteAsync(request);
+
             var responseContent = JToken.Parse(response.Content);
             Assert.That(HttpStatusCode.OK, Is.EqualTo(response.StatusCode));
             Assert.That(updatedName, Is.EqualTo(responseContent.SelectToken("name").ToString()));
 
-            request = RequestWithAuth(BoardsEndpoints.GetBoardUrl)
+            request = RequestWithAuth(BoardsEndpoints.GetBoardUrl, Method.Get)
                 .AddUrlSegment("id", UrlParamValues.BoardIdToUpdate);
-            response = _client.Get(request);
+            response = await _client.ExecuteAsync(request);
             responseContent = JToken.Parse(response.Content);
 
             Assert.That(updatedName, Is.EqualTo(responseContent.SelectToken("name").ToString()));

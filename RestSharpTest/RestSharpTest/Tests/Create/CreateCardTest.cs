@@ -10,15 +10,15 @@ namespace RestSharpTest.Tests.Create
         private string _CreatedCardId;
 
         [Test]
-        public void CheckCreateCard()
+        public async Task CheckCreateCard()
         {
             var CardName = "New Card" + DateTime.Now.ToShortDateString();
-            var request = RequestWithAuth(CardEndpoints.CreateCardUrl)
+            var request = RequestWithAuth(CardEndpoints.CreateCardUrl, Method.Post)
                 .AddJsonBody(new Dictionary<string, string> { 
                     { "idList", UrlParamValues.ExistingListId },
                     { "name", CardName } 
                 });
-            var response = _client.Post(request);
+            var response = await _client.ExecuteAsync(request);
             var responseContent = JToken.Parse(response.Content);
             _CreatedCardId = responseContent.SelectToken("id").ToString();
 
@@ -26,10 +26,10 @@ namespace RestSharpTest.Tests.Create
             Assert.That(HttpStatusCode.OK, Is.EqualTo(response.StatusCode));
 
             //Creating Get request to check if new Card exists
-            request = RequestWithAuth(CardEndpoints.GetAllCardsURL)
+            request = RequestWithAuth(CardEndpoints.GetAllCardsURL, Method.Get)
                 .AddQueryParameter("field", "id,name")
                 .AddUrlSegment("list_id", UrlParamValues.ExistingListId);
-            response = _client.Get(request);
+            response = await _client.ExecuteAsync(request);
 
             responseContent = JToken.Parse(response.Content);
 
@@ -38,11 +38,11 @@ namespace RestSharpTest.Tests.Create
 
         }
         [TearDown]
-        public void DeleteCreatedCard()
+        public async Task DeleteCreatedCard()
         {
-            var request = RequestWithAuth(CardEndpoints.DeleteCardUrl)
+            var request = RequestWithAuth(CardEndpoints.DeleteCardUrl, Method.Delete)
                 .AddUrlSegment("id", _CreatedCardId);
-            var response = _client.Delete(request);
+            var response = await _client.ExecuteAsync(request);
 
             Assert.That(HttpStatusCode.OK, Is.EqualTo(response.StatusCode));
 

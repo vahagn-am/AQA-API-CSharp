@@ -11,12 +11,12 @@ namespace RestSharpTest.Tests.Delete
         [Test]
         [TestCaseSource(typeof(BoardIdValidationArgumentsProvider))]
 
-        public void CheckDeleteBoardWithInvalidId(BoardIdValidationArgumetsHolder arguments)
+        public async Task CheckDeleteBoardWithInvalidId(BoardIdValidationArgumetsHolder arguments)
         {
-            var request = RequestWithAuth(BoardsEndpoints.DeleteBoradUrl)
+            var request = RequestWithAuth(BoardsEndpoints.DeleteBoradUrl, Method.Delete)
                 .AddOrUpdateParameters(arguments.PathParams);
 
-            var response = _client.Delete(request);
+            var response = await _client.ExecuteAsync(request);
 
             Assert.That(arguments.StatusCode, Is.EqualTo(response.StatusCode));
             Assert.That(arguments.ErrorMessage, Is.EqualTo(response.Content));
@@ -24,25 +24,25 @@ namespace RestSharpTest.Tests.Delete
 
         [Test]
         [TestCaseSource(typeof (AuthValidationArgumenstProvider))]
-        public void CheckDeleteBoardWithoutAuth(AuthValidationArgumentsHolder argumets)
+        public async Task CheckDeleteBoardWithoutAuth(AuthValidationArgumentsHolder argumets)
         {
-            var request = RequestWithoutAuth(BoardsEndpoints.DeleteBoradUrl)
+            var request = RequestWithoutAuth(BoardsEndpoints.DeleteBoradUrl, Method.Get)
                 .AddOrUpdateParameters(argumets.AuthParams)
                 .AddUrlSegment("id", UrlParamValues.ExisitngBoardId);
 
-            var response = _client.Get(request);
+            var response = await _client.ExecuteAsync(request);
 
             Assert.That(argumets.StatusCode, Is.EqualTo(response.StatusCode));
             Assert.That(argumets.ErrorMessage, Is.EqualTo(response.Content));
         }
         [Test]
-        public void CheckDeleteBoardWithAnotherUserCredentials()
+        public async Task CheckDeleteBoardWithAnotherUserCredentials()
         {
-            var request = RequestWithoutAuth(BoardsEndpoints.DeleteBoradUrl)
+            var request = RequestWithoutAuth(BoardsEndpoints.DeleteBoradUrl, Method.Get)
                 .AddOrUpdateParameters(UrlParamValues.AnotherUserAuthQueryParams)
                 .AddUrlSegment("id", UrlParamValues.ExisitngBoardId);
 
-            var response = _client.Get(request);
+            var response = await _client.ExecuteAsync(request);
 
             Assert.That(HttpStatusCode.Unauthorized, Is.EqualTo(response.StatusCode));
             Assert.That("invalid key", Is.EqualTo(response.Content));

@@ -23,14 +23,14 @@ namespace RestSharpTest.Consts
 
         public static readonly IEnumerable<Parameter> AuthQueryParams = new[]
         {
-            new Parameter("key", ValidKey, ParameterType.QueryString),
-            new Parameter("token", ValidToken, ParameterType.QueryString)
+            Parameter.CreateParameter("key", ValidKey, ParameterType.QueryString),
+            Parameter.CreateParameter("token", ValidToken, ParameterType.QueryString)
 
         };
         public static readonly IEnumerable<Parameter> AnotherUserAuthQueryParams = new[]
 {
-            new Parameter("key", "b32218e6887516d17c84253faf967b6", ParameterType.QueryString),
-            new Parameter("token", "ATTA89041bea7ea15ffc07c0c913a3b3bf5101fb5141ac089e9214be7e1183c3db02C77514F7", ParameterType.QueryString)
+            Parameter.CreateParameter("key", "b32218e6887516d17c84253faf967b6", ParameterType.QueryString),
+            Parameter.CreateParameter("token", "ATTA89041bea7ea15ffc07c0c913a3b3bf5101fb5141ac089e9214be7e1183c3db02C77514F7", ParameterType.QueryString)
 
         };
 

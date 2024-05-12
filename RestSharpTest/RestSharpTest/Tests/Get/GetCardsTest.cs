@@ -10,12 +10,12 @@ namespace RestSharpTest.Tests.Get
     public class GetCardsTest : BaseTest
     {
         [Test]
-        public void CheckGetCards()
+        public async Task CheckGetCards()
         {
-            var request = RequestWithAuth(CardEndpoints.GetAllCardsURL)
+            var request = RequestWithAuth(CardEndpoints.GetAllCardsURL, Method.Get)
                 .AddQueryParameter("field", "id,name")
                 .AddUrlSegment("list_id", UrlParamValues.ExistingListId);
-            var response = _client.Get(request);
+            var response = await _client.ExecuteAsync(request);
 
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
             var responseContent = JToken.Parse(response.Content);
@@ -23,12 +23,12 @@ namespace RestSharpTest.Tests.Get
             Assert.True(responseContent.IsValid(jsonSchema));
         }
         [Test]
-        public void CheckGetSpecificCard()
+        public async Task CheckGetSpecificCard()
         {
-            var request = RequestWithAuth(CardEndpoints.GetSingleCardUrl)
+            var request = RequestWithAuth(CardEndpoints.GetSingleCardUrl, Method.Get)
                 .AddQueryParameter("field", "id,name")
                 .AddUrlSegment("id", UrlParamValues.ExistingCardId);
-            var response = _client.Get(request);
+            var response = await _client.ExecuteAsync(request);
 
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
             var responseContent = JToken.Parse(response.Content);

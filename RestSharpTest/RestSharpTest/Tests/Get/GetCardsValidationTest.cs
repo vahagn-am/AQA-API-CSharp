@@ -11,12 +11,12 @@ namespace RestSharpTest.Tests.Get
     {
         [Test]
         [TestCaseSource(typeof(AuthValidationArgumenstProvider))]
-        public void CheckGetCardsWitInvalidAuth(AuthValidationArgumentsHolder arguments)
+        public async Task CheckGetCardsWitInvalidAuth(AuthValidationArgumentsHolder arguments)
         {
-            var request = RequestWithoutAuth(CardEndpoints.GetAllCardsURL)
+            var request = RequestWithoutAuth(CardEndpoints.GetAllCardsURL, Method.Get)
                 .AddOrUpdateParameters(arguments.AuthParams)
                 .AddUrlSegment("list_id", UrlParamValues.ExistingListId);
-            var response = _client.Get(request);
+            var response = await _client.ExecuteAsync(request);
 
             Assert.That(arguments.StatusCode, Is.EqualTo(response.StatusCode));
             Assert.That(arguments.ErrorMessage, Is.EqualTo(response.Content));
@@ -24,12 +24,12 @@ namespace RestSharpTest.Tests.Get
         }
 
         [Test]
-        public void CheckGetCardsWithAnotherCredentials()
+        public async Task CheckGetCardsWithAnotherCredentials()
         {
-            var request = RequestWithoutAuth(CardEndpoints.GetSingleCardUrl)
+            var request = RequestWithoutAuth(CardEndpoints.GetSingleCardUrl, Method.Get)
                 .AddOrUpdateParameters(UrlParamValues.AnotherUserAuthQueryParams)
                 .AddUrlSegment("id", UrlParamValues.ExistingCardId);
-            var response = _client.Get(request);
+            var response = await _client.ExecuteAsync(request);
             Assert.That(HttpStatusCode.Unauthorized, Is.EqualTo(response.StatusCode));
             Assert.That("invalid key", Is.EqualTo(response.Content));
 
@@ -37,12 +37,12 @@ namespace RestSharpTest.Tests.Get
 
         [Test]
         [TestCaseSource(typeof(CardIdValidationArgumentsProvider))]
-        public void CheckGetSpecificCardInvalidId(CardIdValidationArgumentsHolder cardIdValidationArguments)
+        public async Task CheckGetSpecificCardInvalidId(CardIdValidationArgumentsHolder cardIdValidationArguments)
         {
-            var request = RequestWithAuth(CardEndpoints.GetSingleCardUrl)
+            var request = RequestWithAuth(CardEndpoints.GetSingleCardUrl, Method.Get)
                 .AddOrUpdateParameters(cardIdValidationArguments.PathParams);
 
-            var response = _client.Get(request);
+            var response = await _client.ExecuteAsync(request);
             Assert.That(cardIdValidationArguments.StatusCode, Is.EqualTo(response.StatusCode));
             Assert.That(cardIdValidationArguments.ErrorMessage, Is.EqualTo(response.Content));
 
@@ -50,24 +50,24 @@ namespace RestSharpTest.Tests.Get
 
         [Test]
         [TestCaseSource(typeof(AuthValidationArgumentsProviderForCard))]
-        public void CheckGetSpecificCardWitInvalidAuth(AuthValidationArgumentsHolderForCard arguments)
+        public async Task CheckGetSpecificCardWitInvalidAuth(AuthValidationArgumentsHolderForCard arguments)
         {
-            var request = RequestWithoutAuth(CardEndpoints.GetSingleCardUrl)
+            var request = RequestWithoutAuth(CardEndpoints.GetSingleCardUrl, Method.Get)
                 .AddOrUpdateParameters(arguments.AuthParams)
                 .AddUrlSegment("id", UrlParamValues.ExistingCardId);
 
-            var response = _client.Get(request);
+            var response = await _client.ExecuteAsync(request);
             Assert.That(arguments.StatusCode, Is.EqualTo(response.StatusCode));
             Assert.That(arguments.ErrorMessage, Is.EqualTo(response.Content));
         }
 
         [Test]
-        public void CheckGetSpecificCardWithAnotherUserCredentials()
+        public async Task CheckGetSpecificCardWithAnotherUserCredentials()
         {
-            var request = RequestWithoutAuth(CardEndpoints.GetSingleCardUrl)
+            var request = RequestWithoutAuth(CardEndpoints.GetSingleCardUrl, Method.Get)
                 .AddOrUpdateParameters(UrlParamValues.AnotherUserAuthQueryParams)
                 .AddUrlSegment("id", UrlParamValues.ExistingCardId);
-            var response = _client.Get(request);
+            var response = await _client.ExecuteAsync(request);
             Assert.That(HttpStatusCode.Unauthorized, Is.EqualTo(response.StatusCode));
             Assert.That("invalid key", Is.EqualTo(response.Content));
         }

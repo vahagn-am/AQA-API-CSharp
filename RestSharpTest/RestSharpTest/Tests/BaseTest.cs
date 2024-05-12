@@ -12,12 +12,16 @@ namespace RestSharpTest.Tests
             _client = new RestClient("http://api.trello.com");
 
 
-        protected IRestRequest RequestWithAuth(string url) =>
-             RequestWithoutAuth(url)
+        protected RestRequest RequestWithAuth(string url, Method method) =>
+             RequestWithoutAuth(url, method)
             .AddOrUpdateParameters(UrlParamValues.AuthQueryParams);
 
 
-        protected IRestRequest RequestWithoutAuth(string url) =>
-                new RestRequest(url);
+        protected RestRequest RequestWithoutAuth(string url, Method method) =>
+                new RestRequest(url, method);
+
+        [OneTimeTearDown]
+        protected static void DisposeRestClient() =>
+            _client?.Dispose();
     }
 }

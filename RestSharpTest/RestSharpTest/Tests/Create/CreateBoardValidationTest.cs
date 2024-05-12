@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json.Linq;
+using RestSharp;
 using RestSharpTest.Arguments.Holders;
 using RestSharpTest.Arguments.Providers;
 using RestSharpTest.Consts;
@@ -11,25 +12,26 @@ namespace RestSharpTest.Tests.Create
         [Test]
         [TestCaseSource(typeof(BoardNameValidationArgumentsProvider))]
 
-        public void CheckCreateBoardWithInvalidName(IDictionary<string, object> arguments)
+        public async Task CheckCreateBoardWithInvalidName(IDictionary<string, object> arguments)
         {
-            var request = RequestWithAuth(BoardsEndpoints.CreateBoardUrl).
+            var request = RequestWithAuth(BoardsEndpoints.CreateBoardUrl, Method.Post).
             AddJsonBody(arguments);
-            var response = _client.Post(request);
+            var response = await _client.ExecuteAsync(request);
+            var responseContent = JToken.Parse(response.Content);
+            var errorMessage = responseContent.SelectToken("message").ToString();
 
             Assert.That(HttpStatusCode.BadRequest, Is.EqualTo(response.StatusCode));
-            Assert.That("{\"message\":\"invalid value for name\",\"error\":\"ERROR\"}", 
-                Is.EqualTo( response.Content));
+            Assert.That("invalid value for name",Is.EqualTo(errorMessage));
         }
         [Test]
         [TestCaseSource(typeof(AuthValidationArgumenstProvider))]   
-        public void CheckCreateBoardWithInvalidAuth(AuthValidationArgumentsHolder arguments)
+        public async Task CheckCreateBoardWithInvalidAuth(AuthValidationArgumentsHolder arguments)
         {
             var Boardname = "New Board";
-            var request = RequestWithoutAuth(BoardsEndpoints.CreateBoardUrl)
+            var request = RequestWithoutAuth(BoardsEndpoints.CreateBoardUrl, Method.Post)
                 .AddOrUpdateParameters(arguments.AuthParams)
                 .AddJsonBody(new Dictionary<string, string> { { "name", Boardname} });
-            var response = _client.Post(request);
+            var response = await _client.ExecuteAsync(request);
 
             Assert.That(HttpStatusCode.Unauthorized, Is.EqualTo(response.StatusCode));
             Assert.That(arguments.ErrorMessage, Is.EqualTo(response.Content));

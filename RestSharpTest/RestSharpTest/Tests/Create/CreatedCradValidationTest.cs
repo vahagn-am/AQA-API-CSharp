@@ -10,11 +10,11 @@ namespace RestSharpTest.Tests.Create
     {
         [Test]
         [TestCaseSource(typeof(CardBodyValidationArgumentsProvider))]
-        public void CheckCreateCardWithInvalidName(CardBodyValidationArgumetsHolder arguments)
+        public async Task CheckCreateCardWithInvalidName(CardBodyValidationArgumetsHolder arguments)
         {
-            var request = RequestWithAuth(CardEndpoints.CreateCardUrl)
+            var request = RequestWithAuth(CardEndpoints.CreateCardUrl, Method.Post)
                 .AddJsonBody(arguments.BodyParams);
-            var response = _client.Post(request);
+            var response = await _client.ExecuteAsync(request);
 
             Assert.That(HttpStatusCode.BadRequest, Is.EqualTo(response.StatusCode));
             Assert.That(arguments.ErrorMessage, Is.EqualTo(response.Content));
@@ -24,16 +24,16 @@ namespace RestSharpTest.Tests.Create
         [Test]
         [TestCaseSource(typeof(AuthValidationArgumentsProviderForCard))]
 
-        public void CheckCreateCardWithInvalidAuth(AuthValidationArgumentsHolderForCard arguments)
+        public async Task CheckCreateCardWithInvalidAuth(AuthValidationArgumentsHolderForCard arguments)
         {
             var CardName = "New Card";
-            var request = RequestWithoutAuth(CardEndpoints.CreateCardUrl)
+            var request = RequestWithoutAuth(CardEndpoints.CreateCardUrl, Method.Post)
                 .AddOrUpdateParameters(arguments.AuthParams)
                 .AddJsonBody(new Dictionary<string, object> {
                     { "name", CardName },
                     {"idList", UrlParamValues.ExistingListId }
                 });
-            var response = _client.Post(request);
+            var response = await _client.ExecuteAsync(request);
             Assert.That(arguments.StatusCode, Is.EqualTo(response.StatusCode));
             Assert.That(arguments.ErrorMessage,
                         Is.EqualTo(response.Content));
@@ -41,16 +41,16 @@ namespace RestSharpTest.Tests.Create
         }
 
         [Test]
-        public void CheckCreateCardWithAnotherUserCredentials()
+        public async Task CheckCreateCardWithAnotherUserCredentials()
         {
-            var request = RequestWithoutAuth(CardEndpoints.CreateCardUrl)
+            var request = RequestWithoutAuth(CardEndpoints.CreateCardUrl, Method.Post)
                 .AddOrUpdateParameters(UrlParamValues.AnotherUserAuthQueryParams)
                 .AddJsonBody(new Dictionary<string, object>
                 {
                     {"name", "New Card" },
                     {"idList", UrlParamValues.ExistingListId }
                 });
-            var response = _client.Post(request);
+            var response = await _client.ExecuteAsync(request);
             Assert.That(HttpStatusCode.Unauthorized, Is.EqualTo(response.StatusCode));
             Assert.That("invalid key", Is.EqualTo(response.Content));
         }

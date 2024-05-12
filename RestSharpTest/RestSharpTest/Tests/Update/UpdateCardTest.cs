@@ -8,14 +8,14 @@ namespace RestSharpTest.Tests.Update
     public class UpdateCardTest : BaseTest
     {
         [Test]
-        public void CheckUpdateCard()
+        public async Task CheckUpdateCard()
         {
             var updatedCardName = "New Name" + DateTime.Now.ToLongDateString();
-            var request = RequestWithAuth(CardEndpoints.UpdateCardUrl)
+            var request = RequestWithAuth(CardEndpoints.UpdateCardUrl, Method.Put)
                 .AddUrlSegment("id", UrlParamValues.CardToUpdate)
                 .AddJsonBody(new Dictionary<string, string> { { "name", updatedCardName } });
+            var response = await _client.ExecuteAsync(request);
 
-            var response = _client.Put(request);
             var responseContent = JToken.Parse(response.Content);
 
             Assert.That(HttpStatusCode.OK, Is.EqualTo(response.StatusCode));
@@ -23,9 +23,9 @@ namespace RestSharpTest.Tests.Update
 
             
             
-            request = RequestWithAuth(CardEndpoints.GetSingleCardUrl)
+            request = RequestWithAuth(CardEndpoints.GetSingleCardUrl, Method.Get)
                 .AddUrlSegment("id", UrlParamValues.CardToUpdate);
-            response = _client.Get(request);
+            response = await _client.ExecuteAsync(request);
             responseContent = JToken.Parse(response.Content);
             Assert.That(updatedCardName, Is.EqualTo(responseContent.SelectToken("name").ToString()));
 

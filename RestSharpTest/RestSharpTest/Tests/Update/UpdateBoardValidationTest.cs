@@ -10,11 +10,11 @@ namespace RestSharpTest.Tests.Update
     {
         [Test]
         [TestCaseSource(typeof(BoardIdValidationArgumentsProvider))]
-        public void CheckUpdatedBoardWithInvalidId(BoardIdValidationArgumetsHolder arguments)
+        public async Task CheckUpdatedBoardWithInvalidId(BoardIdValidationArgumetsHolder arguments)
         {
-            var request = RequestWithAuth(BoardsEndpoints.UpdateBoardUrl)
+            var request = RequestWithAuth(BoardsEndpoints.UpdateBoardUrl, Method.Put)
                 .AddOrUpdateParameters(arguments.PathParams);
-            var response = _client.Put(request);
+            var response = await _client.ExecuteAsync(request);
 
             Assert.That(arguments.StatusCode, Is.EqualTo(response.StatusCode));
             Assert.That(arguments.ErrorMessage, Is.EqualTo(response.Content));
@@ -23,25 +23,25 @@ namespace RestSharpTest.Tests.Update
 
         [Test]
         [TestCaseSource(typeof(AuthValidationArgumenstProvider))]
-        public void CheckUpdateBoardWithInvalidAuth(AuthValidationArgumentsHolder authValidationArguments)
+        public async Task CheckUpdateBoardWithInvalidAuth(AuthValidationArgumentsHolder authValidationArguments)
         {
-            var request = RequestWithoutAuth(BoardsEndpoints.UpdateBoardUrl)
+            var request = RequestWithoutAuth(BoardsEndpoints.UpdateBoardUrl, Method.Put)
                 .AddOrUpdateParameters(authValidationArguments.AuthParams)
                 .AddUrlSegment("id", UrlParamValues.BoardIdToUpdate)
                 .AddJsonBody(new Dictionary<string, string> { { "name", "updatedName" } });
-            var response = _client.Put(request);
+            var response = await _client.ExecuteAsync(request);
             Assert.That(authValidationArguments.StatusCode, Is.EqualTo(response.StatusCode));
             Assert.That(authValidationArguments.ErrorMessage, Is.EqualTo(response.Content));
 
         }
         [Test]
-        public void CheckUpdateBoardWithAnoherUserCredentials()
+        public async Task CheckUpdateBoardWithAnoherUserCredentials()
         {
-            var request = RequestWithoutAuth(BoardsEndpoints.UpdateBoardUrl)
+            var request = RequestWithoutAuth(BoardsEndpoints.UpdateBoardUrl, Method.Put)
                 .AddOrUpdateParameters(UrlParamValues.AnotherUserAuthQueryParams)
                 .AddUrlSegment("id", UrlParamValues.BoardIdToUpdate)
                 .AddJsonBody(new Dictionary<string, string> { { "name", "updatedName" } });
-            var response = _client.Put(request);
+            var response = await _client.ExecuteAsync(request);
             Assert.That(HttpStatusCode.Unauthorized, Is.EqualTo(response.StatusCode));
             Assert.That("invalid key", Is.EqualTo(response.Content));
         }

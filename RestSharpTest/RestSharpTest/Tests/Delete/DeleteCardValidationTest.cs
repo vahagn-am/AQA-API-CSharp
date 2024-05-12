@@ -2,7 +2,6 @@
 using RestSharpTest.Arguments.Holders;
 using RestSharpTest.Arguments.Providers;
 using RestSharpTest.Consts;
-using System.Net;
 
 namespace RestSharpTest.Tests.Delete
 {
@@ -11,23 +10,23 @@ namespace RestSharpTest.Tests.Delete
 
         [Test]
         [TestCaseSource(typeof(CardIdValidationArgumentsProvider))]
-        public void CheckDeleteCardWithInvalidID(CardIdValidationArgumentsHolder arguments)
+        public async Task CheckDeleteCardWithInvalidID(CardIdValidationArgumentsHolder arguments)
         {
-            var request = RequestWithAuth(CardEndpoints.DeleteCardUrl)
+            var request = RequestWithAuth(CardEndpoints.DeleteCardUrl, Method.Delete)
                 .AddOrUpdateParameters(arguments.PathParams);
-            var response = _client.Delete(request);
+            var response = await _client.ExecuteAsync(request);
 
             Assert.That(arguments.StatusCode, Is.EqualTo(response.StatusCode));
             Assert.That(arguments.ErrorMessage, Is.EqualTo(response.Content));
         }
         [Test]
         [TestCaseSource(typeof(AuthValidationArgumentsProviderForDeletingCard))]
-        public void CheckDeleteCardWitinvalidAuth(AuthValidationArgumentsHolderForDeletingCard arguments)
+        public async Task CheckDeleteCardWitinvalidAuth(AuthValidationArgumentsHolderForDeletingCard arguments)
         {
-            var request = RequestWithoutAuth(CardEndpoints.DeleteCardUrl)
+            var request = RequestWithoutAuth(CardEndpoints.DeleteCardUrl, Method.Delete)
                 .AddOrUpdateParameters(arguments.AuthParams)
                 .AddUrlSegment("url", UrlParamValues.ExistingCardId);
-            var response = _client.Delete(request);
+            var response = await _client.ExecuteAsync(request);
             Assert.That(arguments.StatusCode, Is.EqualTo(response.StatusCode));
             Assert.That(arguments.ErrorMessage, Is.EqualTo(response.Content));
         }

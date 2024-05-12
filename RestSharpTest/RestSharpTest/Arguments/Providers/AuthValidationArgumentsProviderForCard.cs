@@ -18,13 +18,13 @@ namespace RestSharpTest.Arguments.Providers
             };
             yield return new AuthValidationArgumentsHolderForCard
             {
-                AuthParams = new[] { new Parameter("key", UrlParamValues.ValidKey, ParameterType.QueryString) },
+                AuthParams = new[] { Parameter.CreateParameter("key", UrlParamValues.ValidKey, ParameterType.QueryString) },
                 ErrorMessage = "unauthorized card permission requested",
                 StatusCode = HttpStatusCode.Unauthorized
             };
             yield return new AuthValidationArgumentsHolderForCard
             {
-                AuthParams = new[] { new Parameter("token", UrlParamValues.ValidToken, ParameterType.QueryString) },
+                AuthParams = new[] { Parameter.CreateParameter("token", UrlParamValues.ValidToken, ParameterType.QueryString) },
                 ErrorMessage = "invalid app key",
                 StatusCode = HttpStatusCode.Unauthorized
             };

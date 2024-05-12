@@ -13,14 +13,14 @@ namespace RestSharpTest.Arguments.Providers
             yield return new CardIdValidationArgumentsHolder()
             {
                 ErrorMessage = "invalid id",
-                PathParams = new[] { new Parameter("id", "invalid id", ParameterType.UrlSegment) },
+                PathParams = new[] { Parameter.CreateParameter("id", "invalid id", ParameterType.UrlSegment) },
                 StatusCode = HttpStatusCode.BadRequest
             };
 
             yield return new CardIdValidationArgumentsHolder()
             {
                     ErrorMessage = "The requested resource was not found.",
-                    PathParams = new [] {new Parameter("id", "6639ca0fc3ec23d350a126a0", ParameterType.UrlSegment)},
+                    PathParams = new [] { Parameter.CreateParameter("id", "6639ca0fc3ec23d350a126a0", ParameterType.UrlSegment)},
                     StatusCode = HttpStatusCode.NotFound
             };
 
